@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string name="facebook_app_id">788942225845252</string>
+<string name="fb_login_protocol_scheme">fb788942225845252</string>
+<string name="facebook_client_token">73987166e6ea5659f2bd14d6663559fa</string>
+<string name = "app_name">fitness_app_yoga</string>
+
+</resources>

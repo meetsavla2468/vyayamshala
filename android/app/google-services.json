@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "775421849382",
+    "project_id": "fitnessappyoga",
+    "storage_bucket": "fitnessappyoga.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775421849382:android:92d125557928b13362dbe7",
+        "android_client_info": {
+          "package_name": "com.example.fitness_app_yoga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775421849382-tge5i769lvvqdqel9l08suvndgovs6fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitness_app_yoga",
+            "certificate_hash": "8d38da5901ac8f0426ddfb23e800999292b8b8e8"
+          }
+        },
+        {
+          "client_id": "775421849382-g8p27mu3foqqcr4anm1v5i338q7vf38r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAowWvhMUkMW4MGFb9qrcdsXs-VkHSXmXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775421849382-g8p27mu3foqqcr4anm1v5i338q7vf38r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
