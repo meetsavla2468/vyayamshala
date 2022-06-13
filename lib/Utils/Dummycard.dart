@@ -22,7 +22,7 @@ buildCard() => Container(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text("Blah"),
-                ElevatedButton(onPressed: () {}, child: Text("Join"))
+                ElevatedButton(onPressed: () {},style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.orange)), child: const Text("Join")),
               ],
             ),
           )

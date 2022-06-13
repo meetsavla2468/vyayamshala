@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Homepages(),
     GymPages(),
     EventsPages(),
-    YogaPages(),
+    const paymentRazor(),
     ProfilePages(),
   ];
   int _selectitem = 0;
@@ -87,14 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         leading: const Icon(
-          Icons.arrow_back_ios,
+          Icons.arrow_back,
           color: Colors.black,
         ),
-        title: const Text(
-          "Logo here",
-          style: TextStyle(color: Colors.black),
-        ),
+        title: Image.asset('assets/Untitled design (2).png', fit: BoxFit.contain, height: 60),
         backgroundColor: Colors.white,
         elevation: 1,
         actions: const [
