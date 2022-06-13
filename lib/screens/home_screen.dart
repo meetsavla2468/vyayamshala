@@ -1,5 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_app_yoga/Pages/EventsPage.dart';
+import 'package:fitness_app_yoga/Pages/GymPage.dart';
+import 'package:fitness_app_yoga/Pages/HomePage.dart';
+import 'package:fitness_app_yoga/Pages/ProfilePage.dart';
+import 'package:fitness_app_yoga/Pages/YogaPage.dart';
 import 'package:fitness_app_yoga/models/user_mode.dart';
 import 'package:fitness_app_yoga/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -69,54 +74,68 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  final _pagesdata = [
+    Homepages(),
+    GymPages(),
+    EventsPages(),
+    YogaPages(),
+    ProfilePages(),
+  ];
+  int _selectitem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome back!"),
-        centerTitle: true,
-      ),
-      body: Center(
-          child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 150,
-              child: Image.asset(
-                "assets/silhouette-yogi-in-lotus-position-in-chakra-vector-36128325.jpg",
-                fit: BoxFit.contain,
-              ),
-            ),
-            const Text(
-              "Welcome Back",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              // "${loggedInUser.firstName} ${loggedInUser.lastName}",
-              userName != null
-                  ? "$userName"
-                  : "${loggedInUser.firstName} ${loggedInUser.lastName}",
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w500),
-            ),
-            Text(
-              userEmail != null ? "$userEmail" : "${loggedInUser.email}",
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 15),
-            ActionChip(
-                label: const Text("Logout"),
-                onPressed: () {
-                  logout(context);
-                }),
-          ],
+        leading: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
         ),
-      )),
+        title: const Text(
+          "Logo here",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 1,
+        actions: const [
+          Icon(
+            Icons.notification_add_sharp,
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 40,
+          )
+        ],
+      ),
+      body: Material(
+        color: Colors.cyan,
+        child: Center(
+          child: _pagesdata[_selectitem],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        // backgroundColor: Colors.blueGrey,
+        // currentIndex: selectedIndex,
+        // onTap: onItemTap,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.g_mobiledata_outlined), label: "Gym"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.event_note_outlined), label: "Events"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.sports_gymnastics_sharp), label: "Yoga"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: "Profile")
+        ],
+        currentIndex: _selectitem,
+        onTap: (setValue) {
+          setState(() {
+            _selectitem = setValue;
+          });
+        },
+      ),
     );
   }
 }
