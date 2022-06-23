@@ -3,10 +3,10 @@ import 'package:flutter/foundation.dart';
 class CartModel {
   final String id;
   final double price;
-  double quantity;
+  int quantity;
   double totalPrice;
 
-  set setQuantity(double quantity) {
+  set setQuantity(int quantity) {
     this.quantity = quantity;
   }
 
@@ -41,17 +41,17 @@ class Cart {
 
   static double totalPricing() {
     double price = 0;
-    _items.map((item) {
-      price += item.totalPrice;
-    });
+    for(int i = 0; i < _items.length; ++i){
+      price += _items[i].totalPrice;
+    }
     return price;
   }
 
   static int totalQuantity() {
     int quantity = 0;
-    _items.map((item) {
-      quantity += item.quantity as int;
-    });
+    for(int i = 0; i < _items.length; ++i){
+      quantity += _items[i].quantity;
+    }
     return quantity;
   }
 

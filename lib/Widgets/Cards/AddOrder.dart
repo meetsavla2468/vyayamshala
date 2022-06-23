@@ -36,7 +36,7 @@ class _OrderAddState extends State<OrderAdd> {
                 CartModel(
                   id: mealsData[widget.index].id,
                   price: mealsData[widget.index].price,
-                  quantity: _itemCount as double,
+                  quantity: _itemCount,
                   totalPrice: _item["price"] as double,
                 ),
               );
@@ -67,9 +67,9 @@ class _OrderAddState extends State<OrderAdd> {
           : null,
       child: Container(
         margin: const EdgeInsets.only(
-          top: 10,
+          top: 3,
         ),
-        height: 50,
+        height: 45,
         decoration: BoxDecoration(
           border: Border.all(
             color: theme.accentColor,
@@ -81,7 +81,7 @@ class _OrderAddState extends State<OrderAdd> {
         child: _itemCount == 0
             ? Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     "Add item",
                     style: GoogleFonts.aBeeZee(color: theme.accentColor),

@@ -94,7 +94,9 @@ class CheckoutScreen extends StatelessWidget {
                 ],
               ),
               const DeliveryForm(),
-              const TotalBilling(),
+              const TotalBilling(
+
+              ),
               const SizedBox(
                 height: 40,
               ),
