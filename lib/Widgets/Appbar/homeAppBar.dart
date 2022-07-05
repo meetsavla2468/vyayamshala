@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:khana/Utils/Routes/routes.dart';
 
-
-PreferredSize CustomAppBar(BuildContext ctx, VoidCallback func) {
+PreferredSize CustomAppBar(BuildContext ctx, bool showBack, bool showCart) {
   final theme = Theme.of(ctx);
   return PreferredSize(
     preferredSize: const Size.fromHeight(60),
     child: AppBar(
       backgroundColor: theme.primaryColor,
       leading: GestureDetector(
-        onTap: func ?? () {
+        onTap: () {
           Navigator.of(ctx).pop();
         },
         child: Icon(

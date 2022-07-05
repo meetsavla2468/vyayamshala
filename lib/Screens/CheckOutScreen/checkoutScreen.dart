@@ -19,9 +19,6 @@ class CheckoutScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         context,
-        () {
-          Navigator.of(context).pop();
-        },
       ),
       backgroundColor: theme.primaryColor,
       body: SingleChildScrollView(
@@ -41,28 +38,26 @@ class CheckoutScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: media.size.height * 0.6,
-                child: ListView.builder(
-                  itemBuilder: (ctx, index) {
-                    return CheckoutMealCard(
-                      title: mealsData
-                          .firstWhere(
-                              (element) => element.id == _cart[index].id)
-                          .name,
-                      imageURL: mealsData
-                          .firstWhere(
-                              (element) => element.id == _cart[index].id)
-                          .imageURL,
-                      price: _cart[index].price,
-                      quantity: _cart[index].quantity,
-                      index: index,
-                    );
-                    return Container();
-                  },
-                  itemCount: _cart.length,
-                  scrollDirection: Axis.vertical,
-                ),
+              ListView.builder(
+                shrinkWrap: true,
+                itemBuilder: (ctx, index) {
+                  return CheckoutMealCard(
+                    title: mealsData
+                        .firstWhere(
+                            (element) => element.id == _cart[index].id)
+                        .name,
+                    imageURL: mealsData
+                        .firstWhere(
+                            (element) => element.id == _cart[index].id)
+                        .imageURL,
+                    price: _cart[index].price,
+                    quantity: _cart[index].quantity,
+                    index: index,
+                  );
+                  return Container();
+                },
+                itemCount: _cart.length,
+                scrollDirection: Axis.vertical,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

@@ -15,9 +15,6 @@ class MealScreen extends StatelessWidget {
       backgroundColor: theme.primaryColor,
       appBar: CustomAppBar(
         context,
-        () {
-          Navigator.of(context).pop();
-        },
       ),
       body: SingleChildScrollView(
         child: Column(

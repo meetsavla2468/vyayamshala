@@ -11,9 +11,6 @@ class PaymentScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         context,
-            () {
-          Navigator.of(context).pop();
-        },
       ),
       body: Center(
         child: CustomPaymentButton(

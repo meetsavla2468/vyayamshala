@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:khana/Models/mealData.dart';
 import 'package:khana/Utils/Routes/routes.dart';
 import 'package:khana/Widgets/Appbar/homeAppBar.dart';
-import 'package:khana/Widgets/Cards/mealCard.dart';
 import 'package:khana/Widgets/Textfield/textSearchBox.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +18,6 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: theme.primaryColor,
       appBar: CustomAppBar(
         context,
-        () {},
       ),
       body: SafeArea(
         child: SingleChildScrollView(
